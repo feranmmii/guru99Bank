@@ -7,7 +7,7 @@ End test
     close all browsers
 
 Wrong login
-    alert should be present
+    wait until keyword succeeds     10  2  alert should be present
 
 
 Login
@@ -30,6 +30,13 @@ Close iframe
 
 Select new account
     click element  //a[contains(text(),'New Account')]
+
+Create account
+    [Arguments]  ${customer_id}     ${initial_deposite}
+    input text      //input[@name = 'cusid']       ${customer_id}
+    input text      //input[@name = 'inideposit']   ${initial_deposite}
+    select from list by value  //select[@name='selaccount']     Current
+    click button  //input[@name='button2']
 
 
 

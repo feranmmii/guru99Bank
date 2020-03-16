@@ -52,6 +52,25 @@ TC07_account_creation_without_customer_id
     [Tags]  Customer_account
     Close iframe
     Select new account
+    Create account  ${EMPTY}    ${EMPTY}
+    Wrong login
+
+TC08_create_account_with_customer_id_that_has_special_character
+    [Tags]  Customer_account_creation
+    Create account  37848920\}      800
+    Wrong login
+
+TC09_create_account_with_customer_id_created_with_characters
+    [Tags]  Customer_account_creation
+    Create account  thenei37    560
+    Wrong login
+
+TC10_create_account_with_customer_id_whose_first_character_is_space
+    [Tags]  Customer_account_creation
+    Create account  ${SPACE}738390303   560
+    Wrong login
+
+
 
 
 
